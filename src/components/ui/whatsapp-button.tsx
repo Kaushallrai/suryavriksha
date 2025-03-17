@@ -3,6 +3,7 @@
 import { MessageCircle, X } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 interface PhoneOption {
   label: string;
@@ -96,10 +97,11 @@ export default function WhatsAppButton({
         {isOpen ? (
           <X className="h-6 w-6" />
         ) : (
-          <img
+          <Image
             src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
             alt="WhatsApp"
-            className="h-6 w-6"
+            width={32}
+            height={32}
           />
         )}
         <span className="sr-only">

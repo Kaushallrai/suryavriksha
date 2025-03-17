@@ -123,7 +123,7 @@ export default function TeamSection() {
                 >
                   {/* Front of card */}
                   <div className="absolute inset-0 backface-hidden overflow-hidden">
-                    <img
+                    <Image
                       className="h-96 w-full rounded-md object-cover object-top grayscale transition-all duration-500 hover:grayscale-0 group-hover:h-[22.5rem] group-hover:rounded-xl"
                       src={member.avatar || "/placeholder.svg"}
                       alt="team member"
@@ -161,7 +161,7 @@ export default function TeamSection() {
                   <div className="absolute inset-0 backface-hidden rotate-y-180 overflow-hidden">
                     {/* Same image as background */}
                     <div className="absolute inset-0">
-                      <img
+                      <Image
                         className="h-full w-full rounded-xl object-cover object-top"
                         src={member.avatar || "/placeholder.svg"}
                         alt=""

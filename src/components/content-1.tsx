@@ -16,8 +16,9 @@ export default function ContentSection1() {
                   src="/assets/warehouse1.jpg"
                   className="rounded-[15px] shadow-lg"
                   alt="markets illustration"
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  priority
                 />
               </div>
             </div>

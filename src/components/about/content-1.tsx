@@ -20,7 +20,7 @@ export default function ContentSection() {
             eco-friendly practices.
           </p>
         </div>
-        <img
+        <Image
           className="rounded-(--radius) "
           src="/assets/herosectionsv.jpeg"
           alt="team image"

@@ -52,76 +52,84 @@ export default function HeroSection() {
             </div>
           </div>
         </section>
+
+        {/* Trusted Partners Section */}
         <section className="relative z-10 pb-16 md:pb-32">
           <div className="group relative m-auto max-w-6xl px-6">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:border-white/20 md:pr-6">
-                <p className="text-end text-md  text-white">
+                <p className="text-end text-md text-white">
                   Our Trusted Partners
                 </p>
               </div>
               <div className="relative py-6 md:w-[calc(100%-11rem)]">
                 <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
                   <div className="flex">
-                    <img
-                      className="mx-auto h-20 w-fit "
+                    <Image
+                      className="mx-auto h-20 w-auto"
                       src="/assets/partners/1.png"
                       alt="Shivansh Group"
-                      height="20"
-                      width="auto"
+                      height={20}
+                      width={100} // Ensures proper rendering
                     />
                   </div>
 
                   <div className="flex">
-                    <img
-                      className="mx-auto h-20 w-fit "
+                    <Image
+                      className="mx-auto h-20 w-auto"
                       src="/assets/partners/2.png"
                       alt="Agrione Nepal"
-                      height="16"
-                      width="auto"
+                      height={20}
+                      width={100}
                     />
                   </div>
 
                   <div className="flex">
-                    <img
-                      className="mx-auto h-20 w-fit invert"
+                    <Image
+                      className="mx-auto h-20 w-auto invert"
                       src="/assets/partners/4.png"
                       alt="Neel Saraswati"
-                      height="20"
-                      width="auto"
+                      height={20}
+                      width={100}
                     />
                   </div>
+
                   <div className="flex">
-                    <img
-                      className="mx-auto h-20 w-fit "
+                    <Image
+                      className="mx-auto h-20 w-auto"
                       src="/assets/partners/5.png"
                       alt="Sattyam International Services"
-                      height="20"
-                      width="auto"
+                      height={20}
+                      width={100}
                     />
                   </div>
+
                   <div className="flex">
-                    <img
-                      className="mx-auto h-20 w-fit "
+                    <Image
+                      className="mx-auto h-20 w-auto"
                       src="/assets/partners/6.png"
                       alt="Carrefour"
-                      height="16"
-                      width="auto"
+                      height={20}
+                      width={100}
                     />
                   </div>
+
                   <div className="flex">
-                    <img
-                      className="mx-auto h-20 w-fit "
+                    <Image
+                      className="mx-auto h-20 w-auto"
                       src="/assets/partners/7.png"
                       alt="Nepal Seed Agro"
-                      height="28"
-                      width="auto"
+                      height={20}
+                      width={100}
                     />
                   </div>
                 </InfiniteSlider>
 
+                {/* Gradient Effects */}
                 <div className="from-background/10 absolute inset-y-0 left-0 w-20 bg-gradient-to-r"></div>
                 <div className="from-background/10 absolute inset-y-0 right-0 w-20 bg-gradient-to-l"></div>
+
+                {/* Progressive Blur Effect */}
                 <ProgressiveBlur
                   className="pointer-events-none absolute left-0 top-0 h-full w-20"
                   direction="left"
