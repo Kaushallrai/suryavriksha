@@ -1,4 +1,5 @@
 import { Leaf, Globe, ShieldCheck, Package } from "lucide-react";
+import Image from "next/image";
 
 export default function ContentSection() {
   return (
@@ -20,14 +21,16 @@ export default function ContentSection() {
             eco-friendly practices.
           </p>
         </div>
-        <Image
-          className="rounded-(--radius) "
-          src="/assets/herosectionsv.jpeg"
-          alt="team image"
-          height=""
-          width=""
-          loading="lazy"
-        />
+        <div className="relative w-full h-140">
+          <Image
+            className="rounded-[var(--radius)] object-cover"
+            src="/assets/herosectionsv.jpeg"
+            alt="team image"
+            fill
+            loading="lazy"
+          />
+        </div>
+
         <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center gap-2">

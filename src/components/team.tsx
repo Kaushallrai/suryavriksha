@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Button } from "./ui/button";
 import Image from "next/image"; // Make sure you import Image correctly
 
