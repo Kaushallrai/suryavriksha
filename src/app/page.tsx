@@ -14,7 +14,7 @@ import Lenis from "lenis";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis();
-    function raf(time: any) {
+    function raf(time: DOMHighResTimeStamp) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }

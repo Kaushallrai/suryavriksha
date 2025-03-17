@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   title: "SuryaVriksha ",
   icons: {
     icon: "/assets/logo1.png",
-    type: "image/png",
   },
 };
 

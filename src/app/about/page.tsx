@@ -7,7 +7,7 @@ import ContentSection from "@/components/about/content-1";
 export default function Team() {
   useEffect(() => {
     const lenis = new Lenis();
-    function raf(time: any) {
+    function raf(time: DOMHighResTimeStamp) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }

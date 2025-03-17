@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { Button } from "./ui/button";
+import Image from "next/image"; // Make sure you import Image correctly
 
 const members = [
   {
@@ -13,38 +14,38 @@ const members = [
   },
   {
     name: "Vikash Bohora",
-    role: "Chief Operational Office",
+    role: "Chief Operational Officer",
     avatar: "/assets/teams/coo.png",
     description:
-      "Mr. Bohora is a COO is the company who Oversees daily operations, ensuring efficiency across departments.  He looks operational activities of the company including guidance to procurement team, logistics and supply chain team. He also heads the trading activities including relationship with traders and market analysis. ",
+      "Mr. Bohora is the COO of the company who oversees daily operations, ensuring efficiency across departments. He looks over the operational activities of the company, including guidance to the procurement team, logistics and supply chain team. He also heads the trading activities, including relationships with traders and market analysis.",
   },
   {
     name: "Sagar Sharma",
     role: "Chief Finance Officer",
     avatar: "/assets/teams/cfo.jpg",
     description:
-      "Mr. Sharma who is chartered Accountant by profession having more than 10 years of experience in the field of account and finance helps in managing financial planning, budgeting, and reporting.  He overlooks the finance managers and also helps in relationship with banks and financial institutions. ",
+      "Mr. Sharma, a Chartered Accountant by profession with more than 10 years of experience in finance, helps manage financial planning, budgeting, and reporting. He oversees the finance team and also helps with relationships with banks and financial institutions.",
   },
   {
     name: "Ramesh Mangrati",
     role: "Chief Marketing Officer",
     avatar: "/assets/teams/cmo.jpg",
     description:
-      "Mr. Mangrati is playing the role of CMO of the company who is having wide range of experience in the field of marketing. Mr. Mangrati plays a critical role in driving brand awareness, customer acquisition, and revenue growth by promoting the company's products and services. ",
+      "Mr. Mangrati, the CMO of the company, has a wide range of experience in marketing. He plays a critical role in driving brand awareness, customer acquisition, and revenue growth by promoting the company's products and services.",
   },
   {
     name: "Naren Ayer",
     role: "Customer Service Manager",
     avatar: "/assets/teams/csm.jpeg",
     description:
-      "Mr. Ayer plays a crucial role in ensuring customer satisfaction and maintaining strong relationships with clients in our company. He plays a role in building trust, resolving issues, and ensuring smooth communication between the company and its customers, which can include farmers, suppliers, wholesalers, retailers, and international customers. ",
+      "Mr. Ayer ensures customer satisfaction and maintains strong relationships with clients in our company. He plays a role in building trust, resolving issues, and ensuring smooth communication between the company and its customers.",
   },
   {
-    name: "Kaushal Rai ",
+    name: "Kaushal Rai",
     role: "Information Technology Officer",
     avatar: "/assets/teams/ito.jpeg",
     description:
-      "Mr. Rai is IT officer of our company who manages IT infrastructure and systems of our company. He provides technical support and maintain systems and also analyse data to improve decision-making and operations.",
+      "Mr. Rai is the IT officer of our company who manages IT infrastructure and systems. He provides technical support, maintains systems, and analyzes data to improve decision-making and operations.",
   },
 ];
 
@@ -52,13 +53,7 @@ export default function TeamSection() {
   const [flippedCards, setFlippedCards] = useState<Record<number, boolean>>({});
   const [hoveredCards, setHoveredCards] = useState<Record<number, boolean>>({});
 
-  // Track if the card was flipped by button click
-  const manualFlipRef = useRef<Record<number, boolean>>({});
-
   const flipCard = (index: number) => {
-    // Mark this as a manual flip
-    manualFlipRef.current[index] = true;
-
     setFlippedCards((prev) => ({
       ...prev,
       [index]: !prev[index],
@@ -78,12 +73,8 @@ export default function TeamSection() {
       [index]: false,
     }));
 
-    // If the card is flipped, flip it back to front
+    // Flip back if card was flipped
     if (flippedCards[index]) {
-      // Reset the manual flip flag
-      manualFlipRef.current[index] = false;
-
-      // Flip back to front
       setFlippedCards((prev) => ({
         ...prev,
         [index]: false,
@@ -100,13 +91,14 @@ export default function TeamSection() {
           </div>
           <div className="mt-6 sm:mt-0">
             <p>
-              Get to Know the Passionate Individuals Behind SuryaVriksha, a Team
-              Dedicated to Revolutionizing the Export Industry with Sustainable,
-              High-Quality Products, Ethical Sourcing, and Seamless Global Trade
-              Solutions.
+              Get to know the passionate individuals behind SuryaVriksha, a team
+              dedicated to revolutionizing the export industry with sustainable,
+              high-quality products, ethical sourcing, and seamless global trade
+              solutions.
             </p>
           </div>
         </div>
+
         <div className="mt-12 md:mt-24">
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {members.map((member, index) => (
@@ -126,15 +118,14 @@ export default function TeamSection() {
                     <Image
                       className="h-96 w-full rounded-md object-cover object-top grayscale transition-all duration-500 hover:grayscale-0 group-hover:h-[22.5rem] group-hover:rounded-xl"
                       src={member.avatar || "/placeholder.svg"}
-                      alt="team member"
-                      width="826"
-                      height="1239"
+                      alt={member.name}
+                      width={826}
+                      height={1239}
                     />
 
                     {/* About button that appears on hover */}
                     <Button
-                      className="absolute bottom-20 left-1/2 -translate-x-1/2   border text-white px-6  rounded-md 
-                                opacity-0 transition-all duration-300 group-hover:opacity-100 hover:bg-primary/90"
+                      className="absolute bottom-20 left-1/2 -translate-x-1/2 border text-white px-6 rounded-md opacity-0 transition-all duration-300 group-hover:opacity-100 hover:bg-primary/90"
                       onClick={(e) => {
                         e.stopPropagation();
                         flipCard(index);
@@ -159,16 +150,14 @@ export default function TeamSection() {
 
                   {/* Back of card */}
                   <div className="absolute inset-0 backface-hidden rotate-y-180 overflow-hidden">
-                    {/* Same image as background */}
                     <div className="absolute inset-0">
                       <Image
                         className="h-full w-full rounded-xl object-cover object-top"
                         src={member.avatar || "/placeholder.svg"}
-                        alt=""
-                        width="826"
-                        height="1239"
+                        alt={member.name}
+                        width={826}
+                        height={1239}
                       />
-                      {/* Overlay for better text readability */}
                       <div className="absolute inset-0 bg-black/70 rounded-xl"></div>
                     </div>
 
